@@ -24,7 +24,12 @@ def read_visitor_count():
         count = 0  # 파일 내용이 유효하지 않을 경우 0으로 초기화
     return count
 
-# 파일에서 방문자 수 읽기
+# 방문자 수를 파일에 쓰기
+def write_visitor_count(count):
+    with open('visitor_count.txt', 'w') as file:
+        file.write(str(count))
+
+# 방문자 수를 파일에서 읽기
 visitor_count = read_visitor_count()
 
 # 방문자 수 증가
