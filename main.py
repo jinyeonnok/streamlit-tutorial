@@ -1,39 +1,26 @@
-# main.py
 import streamlit as st
-
 import requests
 
-
+# Naver의 현재 날짜 가져오기
 res = requests.get('https://www.naver.com/')
 print(res.headers['Date'])
 
-st.title('오늘날짜',str(res.headers['Date']))
-
-import streamlit as st
+st.title('오늘 날짜')
+st.write(res.headers['Date'])
 
 # 제목
 st.title("간단한 계산기")
 
-# 사용자 입력
-num1 = st.number_input("첫 번째 숫자", value=0.0)
-num2 = st.number_input("두 번째 숫자", value=0.0)
-
-# 연산자 선택
-operation = st.selectbox("연산 선택", ["덧셈", "뺄셈", "곱셈", "나눗셈"])
+# 사용자 입력: 수식 입력
+user_input = st.text_input("수식을 입력하세요 (예: 3 * 4)")
 
 # 계산 버튼
 if st.button("계산"):
-    if operation == "덧셈":
-        result = num1 + num2
-    elif operation == "뺄셈":
-        result = num1 - num2
-    elif operation == "곱셈":
-        result = num1 * num2
-    elif operation == "나눗셈":
-        if num2 != 0:
-            result = num1 / num2
-        else:
-            result = "오류: 0으로 나눌 수 없습니다."
+    try:
+        # eval() 함수로 수식 계산
+        result = eval(user_input)
+        # 결과 출력
+        st.write("결과:", result)
+    except Exception as e:
+        st.write("오류:", str(e))
 
-    # 결과 출력
-    st.write("결과:", result)
