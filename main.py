@@ -13,15 +13,16 @@ st.write(current_date)
 def read_visitor_count():
     try:
         with open('visitor_count.txt', 'r') as file:
-            count = int(file.read())
+            content = file.read().strip()  # 공백 제거
+            if content:  # 파일 내용이 비어 있지 않으면
+                count = int(content)  # 정수로 변환
+            else:
+                count = 0  # 비어 있을 경우 0으로 초기화
     except FileNotFoundError:
-        count = 0
+        count = 0  # 파일이 없을 경우 0으로 초기화
+    except ValueError:
+        count = 0  # 파일 내용이 유효하지 않을 경우 0으로 초기화
     return count
-
-# 방문자 수를 파일에 쓰기
-def write_visitor_count(count):
-    with open('visitor_count.txt', 'w') as file:
-        file.write(str(count))
 
 # 파일에서 방문자 수 읽기
 visitor_count = read_visitor_count()
