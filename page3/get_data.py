@@ -107,13 +107,13 @@ class Lotto_class:
             nums_td = rows[i].find_all('td')[1].find_all('span')
             bonus = rows[i].find_all('td')[2].text
             numbers[f'{end-i}회차'] = {
-                                        '번호1' : nums_td[0].text,
-                                        '번호2' : nums_td[1].text,
-                                        '번호3' : nums_td[2].text,
-                                        '번호4' : nums_td[3].text,
-                                        '번호5' : nums_td[4].text,
-                                        '번호6' : nums_td[5].text,
-                                        '보너스' : bonus
+                                        '번호1' : int(nums_td[0].text),
+                                        '번호2' : int(nums_td[1].text),
+                                        '번호3' : int(nums_td[2].text),
+                                        '번호4' : int(nums_td[3].text),
+                                        '번호5' : int(nums_td[4].text),
+                                        '번호6' : int(nums_td[5].text),
+                                        '보너스' : int(bonus)
                                         }
             
         return numbers

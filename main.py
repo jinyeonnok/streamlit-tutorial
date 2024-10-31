@@ -49,6 +49,7 @@ st.markdown("""
 
 # 색상 지정 함수
 def get_color(number):
+    number = int(number)
     if 1 <= number <= 10:
         return "#f9c74f"  # 노란색
     elif 11 <= number <= 20:
@@ -70,9 +71,6 @@ def display_lotto_numbers(numbers):
     lotto_balls_html += '</div>'
     st.markdown(lotto_balls_html, unsafe_allow_html=True)
     
-
-
-
 
 # 탭 추가
 tab1, tab2 = st.tabs(["현재 당첨 번호", "과거 당첨 기록"])
