@@ -62,12 +62,15 @@ def get_color(number):
     else:
         return "#000000"  # 기본 색상
 
-# # 로또 번호 표시
-lotto_balls_html = '<div class="lotto-container">'
-for value in 당첨번호.values():
-    color = get_color(value)
-    lotto_balls_html += f'<div class="lotto-ball" style="background-color: {color};">{value}</div>'
-lotto_balls_html += '</div>'
+def display_lotto_numbers(numbers):
+    lotto_balls_html = '<div class="lotto-container">'
+    for value in numbers.values():
+        color = get_color(value)
+        lotto_balls_html += f'<div class="lotto-ball" style="background-color: {color};">{value}</div>'
+    lotto_balls_html += '</div>'
+    st.markdown(lotto_balls_html, unsafe_allow_html=True)
+    
+
 
 
 
@@ -75,8 +78,8 @@ lotto_balls_html += '</div>'
 tab1, tab2 = st.tabs(["현재 당첨 번호", "과거 당첨 기록"])
 
 with tab1:
-    st.header("현재 당첨 번호")
-    st.markdown(lotto_balls_html, unsafe_allow_html=True)
+    st.header("현재 당첨 번호")    
+    display_lotto_numbers(당첨번호)
 
 with tab2:
     st.header("과거 당첨 기록")
@@ -100,11 +103,11 @@ with tab2:
 
     # 과거 기록 출력
     if 과거기록:
-        st.write(f"{주차선택} 당첨 번호:")
-        display_lotto_numbers(과거기록)
+        for 회차, 번호 in 과거기록.items():
+            st.subheader(f"{회차}회차")
+            display_lotto_numbers(번호)
     else:
         st.write("해당 기록이 없습니다.")
-
 
 
 
