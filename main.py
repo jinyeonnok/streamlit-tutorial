@@ -64,11 +64,11 @@ def get_color(number):
         return "#000000"  # 기본 색상
 
 # 로또 번호 표시
-st.markdown('<div class="lotto-container">', unsafe_allow_html=True)
+lotto_balls_html = '<div class="lotto-container">'
 for value in 당첨번호.values():
     color = get_color(value)
-    st.markdown(f'<div class="lotto-ball" style="background-color: {color};">{value}</div>', unsafe_allow_html=True)
-st.markdown('</div>', unsafe_allow_html=True)
-# 빈도 = lotto_instance.빈도추출(최근회차-5,최근회차)
+    lotto_balls_html += f'<div class="lotto-ball" style="background-color: {color};">{value}</div>'
+lotto_balls_html += '</div>'
 
-
+# HTML 출력
+st.markdown(lotto_balls_html, unsafe_allow_html=True)
