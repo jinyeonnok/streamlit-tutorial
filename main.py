@@ -57,3 +57,12 @@ if st.button("계산"):
         st.write("결과:", result)
     except Exception as e:
         st.write("오류:", str(e))
+
+
+
+
+
+
+
+
+
