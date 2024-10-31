@@ -64,13 +64,11 @@ def get_color(number):
 
 # # 로또 번호 표시
 lotto_balls_html = '<div class="lotto-container">'
-# for value in 당첨번호.values():
-#     color = get_color(value)
-#     lotto_balls_html += f'<div class="lotto-ball" style="background-color: {color};">{value}</div>'
-# lotto_balls_html += '</div>'
+for value in 당첨번호.values():
+    color = get_color(value)
+    lotto_balls_html += f'<div class="lotto-ball" style="background-color: {color};">{value}</div>'
+lotto_balls_html += '</div>'
 
-# # HTML 출력
-st.markdown(lotto_balls_html, unsafe_allow_html=True)
 
 
 # 탭 추가
