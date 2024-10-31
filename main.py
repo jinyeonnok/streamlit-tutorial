@@ -99,10 +99,11 @@ with tab2:
     elif 주차선택 == "3달 전":
         과거기록 = lotto_instance.download_records(최근회차-11, 최근회차)
 
-    과거기록 = 과거기록.iloc[::-1]
 
     # 과거 기록 출력
     if 과거기록:
+        
+        과거기록 = 과거기록.iloc[::-1]
         for 회차, 번호 in 과거기록.items():
             st.subheader(f"{회차}회차")
             display_lotto_numbers(번호)
