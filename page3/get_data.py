@@ -106,7 +106,7 @@ class Lotto_class:
             # print(i)
             nums_td = rows[i].find_all('td')[1].find_all('span')
             bonus = rows[i].find_all('td')[2].text
-            numbers[f'{len(rows)-i}회차'] = {
+            numbers[f'{end-i}회차'] = {
                                         '번호1' : int(nums_td[0].text),
                                         '번호2' : int(nums_td[1].text),
                                         '번호3' : int(nums_td[2].text),
