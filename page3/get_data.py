@@ -47,7 +47,7 @@ class Lotto_class:
                 '보너스' : data['bnusNo']
             }
             # result.append(numbers)
-            return print(numbers)
+            return numbers
         else:
             print(f'호출 에러가 발생했습니다. 상태 코드: {response.status_code}\n, 메시지: {response.text}')
         

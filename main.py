@@ -18,9 +18,9 @@ st.title('이번주 당첨번호')
 
 최근회차 = lotto_instance.최근회차()
 
-st.title(최근회차)
+st.title(str(최근회차))
 
-st.title(lotto_instance.check_num(최근회차))
+st.title(str(lotto_instance.check_num(최근회차)))
 
 # 빈도 = lotto_instance.빈도추출(최근회차-5,최근회차)
 
