@@ -98,7 +98,7 @@ class Lotto_class:
         
         # 웹상에 회차가 역순으로 있기 때문에 for문을 역순으로 제작하여 낮은 회차가 위로 가게 함
         numbers = {}
-        for i in range(len(rows)-1,-1,-1):
+        for i in range(0,len(rows)):
             '''
             테스트용
             row = rows[1]
@@ -106,7 +106,7 @@ class Lotto_class:
             # print(i)
             nums_td = rows[i].find_all('td')[1].find_all('span')
             bonus = rows[i].find_all('td')[2].text
-            numbers[f'{end-i}회차'] = {
+            numbers[f'{len(rows)-i}회차'] = {
                                         '번호1' : int(nums_td[0].text),
                                         '번호2' : int(nums_td[1].text),
                                         '번호3' : int(nums_td[2].text),
