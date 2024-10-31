@@ -62,15 +62,15 @@ def get_color(number):
     else:
         return "#000000"  # 기본 색상
 
-# 로또 번호 표시
+# # 로또 번호 표시
 lotto_balls_html = '<div class="lotto-container">'
-for value in 당첨번호.values():
-    color = get_color(value)
-    lotto_balls_html += f'<div class="lotto-ball" style="background-color: {color};">{value}</div>'
-lotto_balls_html += '</div>'
+# for value in 당첨번호.values():
+#     color = get_color(value)
+#     lotto_balls_html += f'<div class="lotto-ball" style="background-color: {color};">{value}</div>'
+# lotto_balls_html += '</div>'
 
-# HTML 출력
-st.markdown(lotto_balls_html, unsafe_allow_html=True)
+# # HTML 출력
+# st.markdown(lotto_balls_html, unsafe_allow_html=True)
 
 
 # 탭 추가
@@ -85,6 +85,9 @@ with tab2:
     주차선택 = st.selectbox("주차를 선택하세요:", 
                              ["1주 전", "2주 전", "3주 전", "4주 전", 
                               "2달 전", "3달 전", "기타"])
+    
+    
+    
 
     # 선택된 주차에 따른 데이터 출력 (임시 예시)
     if 주차선택 == "1주 전":
