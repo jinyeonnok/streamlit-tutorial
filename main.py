@@ -83,29 +83,27 @@ with tab2:
     주차선택 = st.selectbox("주차를 선택하세요:", 
                              ["1주 전", "2주 전", "3주 전", "4주 전", 
                               "2달 전", "3달 전", "기타"])
-    
-    
-    
 
-    # 선택된 주차에 따른 데이터 출력 (임시 예시)
+    # 선택된 주차에 따른 데이터 출력
     if 주차선택 == "1주 전":
-        st.write("1주 전 당첨 번호: [예시 번호]")
+        과거기록 = lotto_instance.download_records(최근회차, 최근회차)
     elif 주차선택 == "2주 전":
-        st.write("2주 전 당첨 번호: [예시 번호]")
+        과거기록 = lotto_instance.download_records(최근회차-1, 최근회차)
     elif 주차선택 == "3주 전":
-        st.write("3주 전 당첨 번호: [예시 번호]")
+        과거기록 = lotto_instance.download_records(최근회차-2, 최근회차)
     elif 주차선택 == "4주 전":
-        st.write("4주 전 당첨 번호: [예시 번호]")
+        과거기록 = lotto_instance.download_records(최근회차-3, 최근회차)
     elif 주차선택 == "2달 전":
-        st.write("2달 전 당첨 번호: [예시 번호]")
+        과거기록 = lotto_instance.download_records(최근회차-7, 최근회차)
     elif 주차선택 == "3달 전":
-        st.write("3달 전 당첨 번호: [예시 번호]")
+        과거기록 = lotto_instance.download_records(최근회차-11, 최근회차)
+
+    # 과거 기록 출력
+    if 과거기록:
+        st.write(f"{주차선택} 당첨 번호:")
+        display_lotto_numbers(과거기록)
     else:
-        st.write("기타 선택: [상세 정보 필요]")
-
-
-
-
+        st.write("해당 기록이 없습니다.")
 
 
 
