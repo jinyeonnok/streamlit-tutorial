@@ -24,7 +24,6 @@ st.title(f'당첨번호 : ')
 당첨번호 = lotto_instance.check_num(최근회차)
 
 
-
 # HTML 및 CSS 스타일
 st.markdown("""
 <style>
