@@ -55,8 +55,9 @@ def get_color(number):
 
 # 로또 번호 표시
 st.write("로또 번호:")
-for key, value in 당첨번호.items():
-    st.markdown(f'<div class="lotto-ball">{value}</div>', unsafe_allow_html=True)
+for value in 당첨번호.values():
+    color = get_color(value)
+    st.markdown(f'<div class="lotto-ball" style="background-color: {color};">{value}</div>', unsafe_allow_html=True)
 
 # 빈도 = lotto_instance.빈도추출(최근회차-5,최근회차)
 
