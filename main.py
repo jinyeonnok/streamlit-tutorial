@@ -18,8 +18,8 @@ st.title('이번주 당첨번호')
 
 최근회차 = lotto_instance.최근회차()
 
-st.title(f'회차 : {최근회차}')
-st.title(f'당첨번호 : ')
+st.title(f'최근 회차 : {최근회차}')
+# st.title(f'당첨번호 : ')
 
 당첨번호 = lotto_instance.check_num(최근회차)
 
@@ -70,7 +70,7 @@ lotto_balls_html = '<div class="lotto-container">'
 # lotto_balls_html += '</div>'
 
 # # HTML 출력
-# st.markdown(lotto_balls_html, unsafe_allow_html=True)
+st.markdown(lotto_balls_html, unsafe_allow_html=True)
 
 
 # 탭 추가
