@@ -43,7 +43,7 @@ st.markdown("""
     .lotto-container {
         display: flex;
         justify-content: center; /* 가운데 정렬 */
-        flex-wrap: wrap; /* 여러 줄로 표시 가능 */
+        margin-bottom: 20px;
     }
 </style>
 """, unsafe_allow_html=True)
