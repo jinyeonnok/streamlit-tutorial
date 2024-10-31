@@ -20,7 +20,7 @@ st.title('이번주 당첨번호')
 
 st.title(str(최근회차))
 
-# st.title(str(lotto_instance.check_num(최근회차)))
+당첨번호 = lotto_instance.check_num(최근회차)
 
 # HTML 및 CSS 스타일
 st.markdown("""
@@ -43,7 +43,7 @@ st.markdown("""
 
 # 로또 번호 표시
 st.write("로또 번호:")
-for key, value in 최근회차.items():
+for key, value in 당첨번호.items():
     st.markdown(f'<div class="lotto-ball">{value}</div>', unsafe_allow_html=True)
 
 # 빈도 = lotto_instance.빈도추출(최근회차-5,최근회차)
