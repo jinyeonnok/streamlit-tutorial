@@ -1,4 +1,4 @@
-# tab_past_records.py
+# tab2
 import streamlit as st
 
 # 색상 지정 함수

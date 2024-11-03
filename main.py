@@ -1,11 +1,7 @@
 # main.py
-
 import streamlit as st
 from page3.get_data import Lotto_class
-
 from my_html import tab1, tab2
-
-
 
 # Lotto_class의 인스턴스 생성
 lotto_instance = Lotto_class()
@@ -13,7 +9,6 @@ lotto_instance = Lotto_class()
 st.title('이번주 당첨번호')
 
 최근회차 = lotto_instance.최근회차()
-
 st.title(f'최근 회차 : {최근회차}')
 
 # HTML 및 CSS 스타일
@@ -47,3 +42,4 @@ with tab1:
 
 with tab2:
     tab2.display_past_records(lotto_instance, 최근회차)
+

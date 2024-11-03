@@ -1,4 +1,4 @@
-# tab_current_numbers.py
+# tab1
 import streamlit as st
 
 # 색상 지정 함수
