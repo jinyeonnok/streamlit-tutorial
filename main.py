@@ -1,8 +1,11 @@
 # main.py
+
 import streamlit as st
 from page3.get_data import Lotto_class
-import html.tab1  # 현재 당첨 번호 탭 파일
-import html.tab2  # 과거 당첨 기록 탭 파일
+
+from my_html import tab1, tab2
+
+
 
 # Lotto_class의 인스턴스 생성
 lotto_instance = Lotto_class()
@@ -40,7 +43,7 @@ st.markdown("""
 tab1, tab2 = st.tabs(["현재 당첨 번호", "과거 당첨 기록"])
 
 with tab1:
-    html.tab1.display_current_numbers(lotto_instance)
+    tab1.display_current_numbers(lotto_instance)
 
 with tab2:
-    html.tab2.display_past_records(lotto_instance, 최근회차)
+    tab2.display_past_records(lotto_instance, 최근회차)
