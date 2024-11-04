@@ -8,7 +8,7 @@ from page3.get_data import Lotto_class
 from tensorflow import keras
 from keras.layers import LeakyReLU
 import joblib
-
+import streamlit as st
 
 
 # Lotto_class의 인스턴스 생성
@@ -28,9 +28,10 @@ def load_model_and_scaler():
     return model, scaler
 
 # 모델과 스케일러 불러오기
-model, scaler = load_model_and_scaler()
-
-model, scaler = load_model_and_scaler()
+try:
+    model, scaler = load_model_and_scaler()
+except Exception as e:
+    st.error(f"모델 로드 중 에러 발생: {e}")
 
 #%%
 
