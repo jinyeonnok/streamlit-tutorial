@@ -36,6 +36,24 @@ with tab2:
     display_past_records(lotto_instance, 최근회차)
 
 with tab3:
+            
+    st.markdown(
+                 """
+                 <style>
+                 div.stTextInput > label { margin-top: -10px; }
+                 </style>
+                 
+                 <div style="line-height:1.2;">
+                     고정 번호를 선택하시겠습니까?<br>
+                     <span style="font-size: 0.9em; color: gray;">(예: 공백 또는 3, 5, 12)</span>
+                 </div>
+                 """,
+                 unsafe_allow_html=True
+                )
+    
+    
+    # 고정 번호 입력 (숫자만 허용)
+    input_numbers = st.text_input("")
     
     # 사용자가 몇 개의 번호를 추첨할지 입력할 수 있는 텍스트 입력 필드 추가
     num_draws = st.number_input('몇 개의 추가 번호를 뽑으시겠습니까?', min_value=1, max_value=10, value=3)
@@ -43,4 +61,13 @@ with tab3:
     # 생성 버튼 추가
     if st.button('번호 생성'):
         st.write("생성된 번호 :")
-        draw_number(최근회차, 전체기록,num_draws)  # 입력받은 숫자를 draw_number 함수에 전달
+        
+
+        # 입력한 숫자 리스트로 변환
+        if input_numbers:
+            # 쉼표를 기준으로 나누고, 숫자로 변환 후 리스트 생성
+            picked_num = [int(num.strip()) for num in input_numbers.split(',') if num.strip().isdigit()]
+        else:
+            picked_num = None  # 입력이 없으면 빈 리스트
+        
+        draw_number(최근회차, 전체기록,picked_num,num_draws)  # 입력받은 숫자를 draw_number 함수에 전달
