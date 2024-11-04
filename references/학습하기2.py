@@ -197,10 +197,11 @@ print("Predictions:", predictions.flatten())
 # 저장된 모델과 스케일러 불러오기
 model = keras.models.load_model('ann_model.h5')
 scaler = joblib.load('scaler.save')
+i = 0
 for i in range(0,1000):
-    sample = X_test[i].reshape(1, -1)  # 2차원 배열 형태로 변환
+    sample = X_train[i].reshape(1, -1)  # 2차원 배열 형태로 변환
     # print(sample)
-    prediction = model.predict(sample)
+    prediction = model.predict(sample,verbose=0)
     # print(prediction)
     prediction_class = (prediction > 0.5).astype(int)  # 확률을 0 또는 1로 변환
     
