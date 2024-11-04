@@ -76,6 +76,7 @@ def draw_lotto_numbers(최근회차, 전체기록, scaler = scaler) -> pd.DataFr
     results = []
     for number in range(1, 46):
         record = pd.DataFrame([analyze_number(전체기록, 최근회차, number)])
+        record['연속 미출현 횟수'] = record['연속 미출현 횟수'] * 2
         
         features = pd.DataFrame(record[['연속 출현 횟수', '연속 미출현 횟수', '최근 100회차 출현 횟수', '최근 4회차 출현 횟수']]).reset_index(drop=True)
         
@@ -93,6 +94,7 @@ def draw_lotto_numbers(최근회차, 전체기록, scaler = scaler) -> pd.DataFr
         results.append(result)    
     
     results = pd.concat(results)
+    
     results['확률'] = results['확률'] / results['확률'].sum()
     
     selected_numbers = np.random.choice(results['번호'], size=6, replace=False, p=results['확률'])
