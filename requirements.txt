@@ -1,5 +1,7 @@
+streamlit
 beautifulsoup4
 lxml
 tensorflow
 joblib
 scikit-learn
+numpy
