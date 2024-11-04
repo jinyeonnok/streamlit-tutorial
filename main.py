@@ -7,6 +7,27 @@ from my_html.tab2 import display_past_records
 from my_html.tab3 import draw_number    
 
 
+
+st.markdown(
+    """
+    <head>
+        <meta property="og:title" content="내 Streamlit 애플리케이션" />
+        <meta property="og:description" content="이곳은 내 Streamlit 애플리케이션의 설명입니다." />
+        <meta property="og:image" content="https://example.com/preview-image.jpg" />
+        <meta property="og:url" content="https://example.com/your-app" />
+    </head>
+    """,
+    unsafe_allow_html=True
+)
+
+st.title("내 Streamlit 애플리케이션")
+
+
+
+
+
+
+
 # Lotto_class의 인스턴스 생성
 lotto_instance = Lotto_class()
 
