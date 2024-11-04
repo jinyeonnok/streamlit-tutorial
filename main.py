@@ -1,9 +1,9 @@
 # main.py
 import streamlit as st
 from page3.get_data import Lotto_class
-# from my_html import tab1, tab2  # tab1과 tab2 모듈을 임포트
-from my_html.tab1 import display_current_numbers  # 정확한 경로로 import
-from my_html.tab2 import display_past_records     # 정확한 경로로 import
+from my_html.tab1 import display_current_numbers 
+from my_html.tab2 import display_past_records    
+from my_html.tab3 import draw_number    
 
 # Lotto_class의 인스턴스 생성
 lotto_instance = Lotto_class()
@@ -37,12 +37,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # 탭 추가
-tab1, tab2 = st.tabs(["현재 당첨 번호", "과거 당첨 기록"])
+tab1, tab2, tab3 = st.tabs(["현재 당첨 번호", "과거 당첨 기록", "AI 로또 추첨기"])
 
 with tab1:
-    # 임포트한 `display_current_numbers` 함수를 호출
     display_current_numbers(lotto_instance)
 
 with tab2:
-    # 임포트한 `display_past_records` 함수를 호출
     display_past_records(lotto_instance, 최근회차)
+
+with tab3:
+    draw_number(3)

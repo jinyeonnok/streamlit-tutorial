@@ -85,7 +85,7 @@ def analyze_number(df, draw_number, number):
     }
 
 # 예시: 1143회차의 첫번째 번호인 10을 분석
-result = analyze_number(전체기록, 1136, 21)
+result = analyze_number(전체기록, 1144, 21)
 print(result)
 
 #%%
