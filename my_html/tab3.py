@@ -1,4 +1,4 @@
-# tab3
+# my_html/tab3.py
 
 from page3 import draw_lotto_numbers
 import streamlit as st
@@ -29,9 +29,12 @@ def display_lotto_numbers(numbers):
     lotto_balls_html += '</div>'
     st.markdown(lotto_balls_html, unsafe_allow_html=True)
 
+
+
 def draw_number(n = 1):
 
     for n in range(0,n):
         draw_numbers = draw_lotto_numbers.draw_lotto_numbers(draw_lotto_numbers.최근회차)
-        display_lotto_numbers(draw_numbers)
-    
+        # display_lotto_numbers(draw_numbers.iloc[0])
+        
+        display_lotto_numbers(draw_numbers.iloc[0].to_dict())

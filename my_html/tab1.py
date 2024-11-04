@@ -18,6 +18,7 @@ def get_color(number):
         return "#000000"  # 기본 색상
 
 def display_lotto_numbers(numbers):
+    print(numbers)
     lotto_balls_html = '<div class="lotto-container">'
     for value in numbers.values():
         color = get_color(value)

@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov  4 10:25:34 2024
-
-@author: Rogio
-"""
+#  pate3/draw_lotto_numbers.py
 
 
 
