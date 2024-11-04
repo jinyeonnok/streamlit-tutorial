@@ -1,7 +1,7 @@
 streamlit
 beautifulsoup4
 lxml
-tensorflow-cpu==2.10.0
+tensorflow-cpu==2.18.0
 joblib
 scikit-learn
 numpy
