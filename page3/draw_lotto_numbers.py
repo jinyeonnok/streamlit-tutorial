@@ -24,8 +24,8 @@ lotto_instance = Lotto_class()
 
 전체기록.index = 전체기록.index.str.replace('회차', '').astype(int)
 
-model = keras.models.load_model('../model/ann_model.h5')
-scaler = joblib.load('../model/scaler.save')
+model = keras.models.load_model('model/ann_model.h5')
+scaler = joblib.load('model/scaler.save')
 
 #%%
 
