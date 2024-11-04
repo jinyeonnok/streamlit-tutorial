@@ -7,7 +7,6 @@ import numpy as np
 from page3.get_data import Lotto_class
 from tensorflow import keras
 from keras.layers import LeakyReLU
-
 import joblib
 
 
@@ -21,8 +20,17 @@ lotto_instance = Lotto_class()
 
 전체기록.index = 전체기록.index.str.replace('회차', '').astype(int)
 
-model = keras.models.load_model('model/ann_model.h5', custom_objects={'LeakyReLU': LeakyReLU})
-scaler = joblib.load('model/scaler.save')
+
+@st.cache_resource
+def load_model_and_scaler():
+    model = keras.models.load_model('model/ann_model.h5', custom_objects={'LeakyReLU': LeakyReLU})
+    scaler = joblib.load('model/scaler.save')
+    return model, scaler
+
+# 모델과 스케일러 불러오기
+model, scaler = load_model_and_scaler()
+
+model, scaler = load_model_and_scaler()
 
 #%%
 
