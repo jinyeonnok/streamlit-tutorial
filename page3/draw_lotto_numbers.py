@@ -21,7 +21,7 @@ lotto_instance = Lotto_class()
 전체기록.index = 전체기록.index.str.replace('회차', '').astype(int)
 
 
-@st.cache_resource
+# @st.cache_resource
 def load_model_and_scaler():
     model = keras.models.load_model('model/ann_model.h5', custom_objects={'LeakyReLU': LeakyReLU})
     scaler = joblib.load('model/scaler.save')
