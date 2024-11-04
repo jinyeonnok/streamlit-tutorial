@@ -1,9 +1,9 @@
 # main.py
 import streamlit as st
 from page3.get_data import Lotto_class
-from my_html import tab1, tab2  # tab1과 tab2 모듈을 임포트
-from tab1 import display_current_numbers  # display_current_numbers 함수를 임포트
-from tab2 import display_past_records  # display_past_records 함수도 임포트
+# from my_html import tab1, tab2  # tab1과 tab2 모듈을 임포트
+from my_html.tab1 import display_current_numbers  # 정확한 경로로 import
+from my_html.tab2 import display_past_records     # 정확한 경로로 import
 
 # Lotto_class의 인스턴스 생성
 lotto_instance = Lotto_class()
