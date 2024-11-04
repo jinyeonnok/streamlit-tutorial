@@ -10,8 +10,6 @@ Created on Mon Nov  4 10:25:34 2024
 import pandas as pd
 import numpy as np
 from page3.get_data import Lotto_class
-from my_html.tab1 import display_current_numbers 
-from my_html.tab2 import display_past_records    
 from tensorflow import keras
 import joblib
 
