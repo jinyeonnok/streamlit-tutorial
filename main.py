@@ -40,6 +40,6 @@ tab1, tab2 = st.tabs(["현재 당첨 번호", "과거 당첨 기록"])
 with tab1:
     tab1.display_current_numbers(lotto_instance)
 
-with tab2:
-    tab2.display_past_records(lotto_instance, 최근회차)
+# with tab2:
+#     tab2.display_past_records(lotto_instance, 최근회차)
 
