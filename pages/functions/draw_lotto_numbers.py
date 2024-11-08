@@ -26,6 +26,7 @@ try:
 except Exception as e:
     st.error(f"모델 로드 중 에러 발생: {e}")
 
+# 독립변수 가져오는 코드
 def analyze_number(df, draw_number, number) -> dict:
     '''
     df = 전체기록
@@ -76,7 +77,11 @@ def analyze_number(df, draw_number, number) -> dict:
         "최근 4회차 출현 횟수": recent_4_count,
     }
 
+<<<<<<< HEAD
 
+=======
+# AI 로또 추첨 기능
+>>>>>>> 860449b16fc021ca37706f27fd443ce4b30d71b7
 def draw_lotto_numbers(최근회차, 전체기록,fixed_numbers = None, excluded_numbers = None) -> pd.DataFrame:
     results = []
     for number in range(1, 46):
@@ -139,25 +144,3 @@ def draw_lotto_numbers(최근회차, 전체기록,fixed_numbers = None, excluded
     return df_numbers
 
 
-# analyze_number(전체기록, 최근회차, 1)
-
-if __name__ == '__main__':
-    
-    test = []
-    
-    for i in range(0,100):
-        test.append(draw_lotto_numbers(최근회차,전체기록))
-
-    test = pd.concat(test)
-        
-        
-    # 각 번호의 출현 횟수 계산
-    total_counts = test.values.flatten()  # 데이터프레임을 1차원 배열로 변환
-    number_counts = pd.Series(total_counts).value_counts().sort_index()  # 각 번호의 출현 횟수 계산
-    
-    # 출현 횟수를 데이터프레임으로 변환
-    number_counts_df = number_counts.reset_index()
-    number_counts_df.columns = ['번호', '출현 횟수']  # 컬럼 이름 설정
-    
-    # 결과 출력
-    print(number_counts_df)
