@@ -2,21 +2,12 @@
 
 import streamlit as st
 import pandas as pd
-<<<<<<< HEAD
-import json
-from 메인페이지 import Display
-=======
->>>>>>> 860449b16fc021ca37706f27fd443ce4b30d71b7
 
 
 from pages.functions.get_data import Lotto_class
 from pages.tabs_view.tab1 import display_current_numbers 
 from pages.tabs_view.tab2 import display_past_records    
 from pages.tabs_view.tab3 import draw_number    
-<<<<<<< HEAD
-
-=======
->>>>>>> 860449b16fc021ca37706f27fd443ce4b30d71b7
 from pages.functions import get_address
 
 import folium
@@ -25,12 +16,7 @@ from streamlit_folium import folium_static
 #%%
 # Lotto_class의 인스턴스 생성
 lotto_instance = Lotto_class()
-<<<<<<< HEAD
-user=Display()
-login_user=user.get_session_state()
-=======
 
->>>>>>> 860449b16fc021ca37706f27fd443ce4b30d71b7
 # 전체 기록을 캐시하는 함수
 @st.cache_data
 def load_all_records():
@@ -39,23 +25,6 @@ def load_all_records():
     전체기록.index = 전체기록.index.str.replace('회차', '').astype(int)
     return 전체기록
 
-<<<<<<< HEAD
-def save_to_json(data):
-        
-        
-        with open('data/user_data.json', 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=4)
-
-def load_data():
-    try:
-        with open('data/user_data.json', 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        return data
-    except FileNotFoundError:
-        return {}  # 파일이 없으면 빈 딕셔너리 리턴
-
-=======
->>>>>>> 860449b16fc021ca37706f27fd443ce4b30d71b7
 # 전체 기록을 한 번만 불러오기
 전체기록 = load_all_records()
 최근회차 = lotto_instance.최근회차()
@@ -136,13 +105,6 @@ elif selected_option == "AI 로또 추첨기":
         else:
             excluded_numbers = None  # 입력이 없으면 빈 리스트
         
-<<<<<<< HEAD
-        user_data=load_data()
-        user_data[login_user]['draw_count']+=num_draws
-        save_to_json(user_data)
-        
-=======
->>>>>>> 860449b16fc021ca37706f27fd443ce4b30d71b7
 
         draw_number(최근회차, 전체기록,fixed_number,excluded_numbers, num_draws )
 
@@ -235,8 +197,4 @@ elif selected_option == "당첨 주소":
     # Streamlit에 지도 표시
     folium_static(my_map)
     
-<<<<<<< HEAD
         
-=======
-        
->>>>>>> 860449b16fc021ca37706f27fd443ce4b30d71b7
