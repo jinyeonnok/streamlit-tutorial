@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib import font_manager
 import numpy as np
 
-from page3 import draw_lotto_numbers
+from pages.functions import draw_lotto_numbers
 
 
 
@@ -79,9 +79,8 @@ def display_current_numbers(lotto_instance, 최근회차, 전체기록):
     통계 = pd.DataFrame(통계)
 
     # 사용자 지정 폰트 로드
-    font_path = 'fonts/NotoSansKR-VariableFont_wght.ttf'  # 경로를 조정하세요
+    font_path = 'pages/fonts/NotoSansKR-VariableFont_wght.ttf'  # 경로를 조정하세요
     font_prop = font_manager.FontProperties(fname=font_path)
-
 
 
 
@@ -94,10 +93,6 @@ def display_current_numbers(lotto_instance, 최근회차, 전체기록):
 
     # 색상 설정
     colors = plt.cm.coolwarm(np.interp(y, (y.min(), y.max()), (0, 1)))
-
-    # 그래프를 그리기 위한 상태 관리
-    if 'zoomed' not in st.session_state:
-        st.session_state.zoomed = False  # 초기 상태는 축소된 상태
 
     # 그래프를 그리기
     plt.figure(figsize=(12, 6))
@@ -136,10 +131,6 @@ def display_current_numbers(lotto_instance, 최근회차, 전체기록):
     # 색상 설정
     colors = plt.cm.coolwarm(np.interp(y, (y.min(), y.max()), (0, 1)))
 
-    # 그래프를 그리기 위한 상태 관리
-    if 'zoomed' not in st.session_state:
-        st.session_state.zoomed = False  # 초기 상태는 축소된 상태
-
     # 그래프를 그리기
     plt.figure(figsize=(12, 6))
     bars = plt.bar(x, y, color=colors)
@@ -174,9 +165,6 @@ def display_current_numbers(lotto_instance, 최근회차, 전체기록):
     # 색상 설정
     colors = plt.cm.coolwarm(np.interp(y, (y.min(), y.max()), (0, 1)))
 
-    # 그래프를 그리기 위한 상태 관리
-    if 'zoomed' not in st.session_state:
-        st.session_state.zoomed = False  # 초기 상태는 축소된 상태
 
     # 그래프를 그리기
     plt.figure(figsize=(12, 6))
@@ -200,6 +188,8 @@ def display_current_numbers(lotto_instance, 최근회차, 전체기록):
     plt.close()  # Streamlit에서 plt 객체를 클리어
 
 
+
+
     # Streamlit에서 제목 설정
     st.title("연속 미출현")
 
@@ -210,9 +200,6 @@ def display_current_numbers(lotto_instance, 최근회차, 전체기록):
     # 색상 설정
     colors = plt.cm.coolwarm(np.interp(y, (y.min(), y.max()), (0, 1)))
 
-    # 그래프를 그리기 위한 상태 관리
-    if 'zoomed' not in st.session_state:
-        st.session_state.zoomed = False  # 초기 상태는 축소된 상태
 
     # 그래프를 그리기
     plt.figure(figsize=(12, 6))
